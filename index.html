@@ -1,959 +1,271 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ridiculous Results — Personal Execution Operating System</title>
-    <meta
-      name="description"
-      content="Identity precedes outcome. Outcome requires execution. The Ridiculous Results FAST App converts who you are into measurable results across MASS, MONEY, MIND, MOB, and ME — and holds you accountable to the work."
-    />
-    <link rel="icon" type="image/png" href="/assets/icon.png" />
-    <style>
-      :root {
-        --obsidian: #1a1a1a;
-        --obsidian-mid: #2e2e2e;
-        --obsidian-light: #4a4a4a;
-        --gold: #c8a24b;
-        --gold-dark: #9a7a30;
-        --gold-light: #f5edd5;
-        --cream: #f5f2ec;
-        --offwhite: #faf8f4;
-        --slate: #8a8a8a;
-        --slate-light: #d6d3cc;
-        --alert: #e84040;
-        --success: #2d7a4f;
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1A1A1A">
+  <meta name="description" content="Ridiculous Results is the quarterly operating system that turns your biggest 12-month goals into weekly execution across health, money, mind, relationships, and self.">
+  <title>Ridiculous Results — The Quarterly Operating System for Your Life</title>
+  <link rel="icon" type="image/png" href="/assets/icon.png">
+  <style>
+    :root {
+      --obsidian:#1a1a1a; --obsidian-mid:#2e2e2e; --gold:#c8a24b; --gold-dark:#9a7a30;
+      --cream:#f5f2ec; --paper:#fbf9f5; --slate:#746f66; --line:#d9d3c8;
+      --serif:Georgia,"Times New Roman",serif; --sans:Arial,"Helvetica Neue",Helvetica,sans-serif;
+    }
+    * { box-sizing:border-box }
+    html { scroll-behavior:smooth }
+    body { margin:0; background:var(--cream); color:var(--obsidian); font:16px/1.6 var(--sans); -webkit-font-smoothing:antialiased }
+    img { display:block; max-width:100% }
+    a { color:inherit }
+    h1,h2,h3,p { margin-top:0 }
+    h1,h2,h3 { font-family:var(--serif); line-height:1.08 }
+    :focus-visible { outline:3px solid var(--gold); outline-offset:3px }
+    .container { width:min(calc(100% - 40px),1120px); margin-inline:auto }
+    .section { padding:72px 0 }
+    .section-heading { max-width:700px; margin:0 auto 40px; text-align:center }
+    .eyebrow { display:block; margin-bottom:12px; color:var(--gold-dark); font-size:.72rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase }
+    .section-heading h2 { margin-bottom:16px; font-size:clamp(2rem,7vw,3.25rem) }
+    .section-heading p { margin-bottom:0; color:var(--slate) }
+    .button { display:inline-flex; min-height:50px; align-items:center; justify-content:center; padding:13px 22px; border:1px solid transparent; border-radius:3px; font-size:.9rem; font-weight:700; line-height:1.2; text-align:center; text-decoration:none; transition:transform 160ms ease,background 160ms ease,border-color 160ms ease }
+    .button:hover { transform:translateY(-2px) }
+    .button-gold { background:var(--gold); color:var(--obsidian) }
+    .button-gold:hover { background:#d7b45e }
+    .button-outline { border-color:#746d60; color:var(--cream) }
+    .button-outline:hover { border-color:var(--gold); color:var(--gold) }
+    .button-dark { background:var(--obsidian); color:var(--cream) }
+    .button-dark:hover { background:var(--obsidian-mid) }
 
-        --mass: #8b3a2a;
-        --mass-light: #f2ddd9;
-        --money: #1a5c3a;
-        --money-light: #d9e9df;
-        --mind: #1a1a1a;
-        --mind-light: #e4e4e4;
-        --mob: #6b2737;
-        --mob-light: #edd9de;
-        --me: #1a3a5c;
-        --me-light: #d9e1e9;
+    .site-header { position:sticky; z-index:20; top:0; border-bottom:1px solid rgba(200,162,75,.28); background:rgba(26,26,26,.97) }
+    .nav { display:flex; min-height:66px; align-items:center; justify-content:space-between; gap:16px }
+    .brand { display:inline-flex; align-items:center; gap:10px; color:var(--cream); font:700 .88rem var(--serif); letter-spacing:.06em; text-decoration:none }
+    .brand img { width:28px; height:28px; object-fit:contain }
+    .nav-links { display:none }
+    .nav .button { min-height:40px; padding:9px 14px; font-size:.78rem }
 
-        --serif: Georgia, "Times New Roman", serif;
-        --sans: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      }
+    .hero { position:relative; overflow:hidden; padding:86px 0 78px; background:var(--obsidian); color:var(--cream) }
+    .hero::before { position:absolute; width:520px; height:520px; border:1px solid rgba(200,162,75,.18); border-radius:50%; content:""; right:-290px; top:-250px }
+    .hero::after { position:absolute; width:55%; height:2px; content:""; left:0; bottom:0; background:linear-gradient(90deg,var(--gold),transparent) }
+    .hero-inner { position:relative; z-index:1; max-width:930px }
+    .hero .eyebrow { color:var(--gold) }
+    .hero h1 { max-width:860px; margin-bottom:24px; color:var(--cream); font-size:clamp(2.65rem,10vw,5.2rem); letter-spacing:-.035em }
+    .hero-copy { max-width:780px; margin-bottom:0; color:#cbc5ba; font:clamp(1.03rem,3.4vw,1.28rem)/1.65 var(--serif) }
+    .hero-actions { display:grid; gap:12px; margin-top:32px }
+    .hero-proof { display:flex; align-items:center; gap:10px; margin-top:24px; color:#8f897f; font-size:.78rem; letter-spacing:.03em }
+    .hero-proof::before { width:24px; height:1px; background:var(--gold); content:"" }
 
-      * {
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        margin: 0;
-        background: var(--cream);
-        color: var(--obsidian);
-        font-family: var(--sans);
-        font-size: 16px;
-        line-height: 1.5;
-        -webkit-font-smoothing: antialiased;
-      }
-      img {
-        max-width: 100%;
-        display: block;
-      }
-      a {
-        color: inherit;
-      }
-      .wrap {
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 0 24px;
-      }
-      .eyebrow {
-        font-family: var(--sans);
-        font-weight: 700;
-        font-size: 11px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        color: var(--gold-dark);
-      }
-      h1,
-      h2,
-      h3 {
-        font-family: var(--serif);
-        font-weight: 700;
-        margin: 0;
-        color: var(--obsidian);
-      }
-      p {
-        margin: 0;
-      }
-      .btn {
-        display: inline-block;
-        font-family: var(--sans);
-        font-weight: 700;
-        font-size: 14px;
-        letter-spacing: 0.3px;
-        text-decoration: none;
-        padding: 15px 30px;
-        border-radius: 4px;
-        cursor: pointer;
-        border: 1.5px solid transparent;
-        transition:
-          transform 0.15s ease,
-          background 0.15s ease,
-          color 0.15s ease;
-      }
-      .btn:hover {
-        transform: translateY(-1px);
-      }
-      .btn-primary {
-        background: var(--gold);
-        color: var(--obsidian);
-      }
-      .btn-primary:hover {
-        background: #d9b262;
-      }
-      .btn-outline {
-        background: transparent;
-        color: var(--cream);
-        border-color: var(--slate-light);
-      }
-      .btn-outline:hover {
-        border-color: var(--gold);
-        color: var(--gold);
-      }
-      .btn-dark {
-        background: var(--obsidian);
-        color: #fff;
-      }
-      .btn-dark:hover {
-        background: var(--obsidian-mid);
-      }
+    .comparison { background:var(--paper) }
+    .comparison-grid { display:grid; overflow:hidden; border:1px solid var(--line); border-radius:8px }
+    .comparison-card { padding:28px 24px; background:var(--cream) }
+    .comparison-card + .comparison-card { border-top:1px solid var(--line) }
+    .comparison-card .label { display:block; margin-bottom:34px; color:var(--slate); font-size:.7rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase }
+    .comparison-card h3 { margin-bottom:0; font-size:1.35rem; font-weight:400; line-height:1.4 }
+    .comparison-card.rr { background:var(--obsidian); color:var(--cream) }
+    .comparison-card.rr .label { color:var(--gold) }
+    .comparison-card.rr h3 { color:var(--cream); font-weight:700 }
 
-      /* NAV */
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: rgba(26, 26, 26, 0.96);
-        backdrop-filter: blur(6px);
-      }
-      nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 16px 24px;
-      }
-      .nav-brand {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .nav-brand img {
-        height: 30px;
-        width: auto;
-      }
-      .nav-brand span {
-        font-family: var(--serif);
-        font-weight: 700;
-        color: var(--cream);
-        font-size: 16px;
-        letter-spacing: 0.5px;
-      }
-      .nav-links {
-        display: flex;
-        gap: 28px;
-        align-items: center;
-      }
-      .nav-links a {
-        color: var(--slate-light);
-        text-decoration: none;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.5px;
-      }
-      .nav-links a:hover {
-        color: var(--gold);
-      }
-      .nav-cta {
-        display: none;
-      }
-      @media (min-width: 720px) {
-        .nav-cta {
-          display: inline-block;
-        }
-      }
+    .fast-section { background:var(--obsidian); color:var(--cream) }
+    .fast-section .section-heading h2 { color:var(--cream) }
+    .fast-section .section-heading p { color:#aaa398 }
+    .fast-section .eyebrow { color:var(--gold) }
+    .fast-grid { display:grid; gap:14px; counter-reset:fast }
+    .fast-card { position:relative; min-height:230px; padding:28px 24px; border:1px solid #3d3934; background:#202020; counter-increment:fast }
+    .fast-card::before { display:grid; width:34px; height:34px; place-items:center; margin-bottom:36px; background:var(--gold); color:var(--obsidian); content:counter(fast,decimal-leading-zero); font-size:.74rem; font-weight:700 }
+    .fast-card h3 { margin-bottom:10px; color:var(--cream); font-size:1.45rem }
+    .fast-card p { margin-bottom:0; color:#aaa398; font-size:.92rem }
 
-      /* HERO */
-      .hero {
-        background: var(--obsidian);
-        color: var(--cream);
-        padding: 100px 24px 90px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
-      .hero::after {
-        content: "";
-        position: absolute;
-        left: 50%;
-        top: -40%;
-        width: 900px;
-        height: 900px;
-        transform: translateX(-50%);
-        background: radial-gradient(
-          circle,
-          rgba(200, 162, 75, 0.1) 0%,
-          rgba(200, 162, 75, 0) 65%
-        );
-        pointer-events: none;
-      }
-      .hero-inner {
-        position: relative;
-        max-width: 760px;
-        margin: 0 auto;
-      }
-      .hero .eyebrow {
-        color: var(--gold);
-        margin-bottom: 22px;
-      }
-      .hero h1 {
-        font-size: 40px;
-        line-height: 1.15;
-        color: var(--cream);
-      }
-      .hero h1 em {
-        color: var(--gold);
-        font-style: normal;
-      }
-      .hero .sub {
-        font-family: var(--sans);
-        font-size: 17px;
-        color: var(--slate-light);
-        max-width: 560px;
-        margin: 24px auto 0;
-        line-height: 1.6;
-      }
-      .hero-ctas {
-        margin-top: 36px;
-        display: flex;
-        gap: 14px;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      .hero-note {
-        margin-top: 18px;
-        font-size: 12px;
-        color: var(--slate);
-        letter-spacing: 0.3px;
-      }
-      @media (min-width: 640px) {
-        .hero h1 {
-          font-size: 52px;
-        }
-      }
+    .features { background:var(--cream) }
+    .feature-grid { display:grid; gap:14px }
+    .feature-card { padding:26px 22px; border:1px solid var(--line); border-top:3px solid var(--gold); border-radius:5px; background:var(--paper) }
+    .feature-number { display:block; margin-bottom:24px; color:var(--gold-dark); font:700 1.1rem var(--serif) }
+    .feature-card h3 { margin-bottom:10px; font-size:1.2rem }
+    .feature-card p { margin-bottom:0; color:var(--slate); font-size:.9rem }
 
-      /* SECTION SHARED */
-      section {
-        padding: 88px 24px;
-      }
-      .section-head {
-        max-width: 640px;
-        margin: 0 auto 56px;
-        text-align: center;
-      }
-      .section-head .eyebrow {
-        display: block;
-        margin-bottom: 14px;
-      }
-      .section-head h2 {
-        font-size: 30px;
-        line-height: 1.25;
-      }
-      .section-head p {
-        font-size: 16px;
-        color: var(--obsidian-light);
-        margin-top: 16px;
-        line-height: 1.6;
-      }
+    .demo { background:var(--paper) }
+    .demo-placeholder { display:grid; min-height:330px; place-items:center; padding:34px 24px; border:1px solid #4c463d; border-radius:8px; background:linear-gradient(rgba(26,26,26,.93),rgba(26,26,26,.93)),repeating-linear-gradient(135deg,transparent 0 20px,rgba(200,162,75,.1) 20px 21px); color:var(--cream); text-align:center }
+    .play-mark { display:grid; width:64px; height:64px; place-items:center; margin:0 auto 22px; border:1px solid var(--gold); border-radius:50%; color:var(--gold); font-size:1.25rem }
+    .demo-placeholder h3 { margin-bottom:8px; color:var(--cream); font-size:1.5rem }
+    .demo-placeholder p { margin-bottom:0; color:#a9a297; font-size:.88rem }
 
-      /* NOT / IS */
-      .contrast {
-        background: var(--offwhite);
-      }
-      .contrast-grid {
-        display: grid;
-        gap: 1px;
-        grid-template-columns: 1fr;
-        background: var(--slate-light);
-        border: 1px solid var(--slate-light);
-        max-width: 900px;
-        margin: 0 auto;
-      }
-      @media (min-width: 720px) {
-        .contrast-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-      .contrast-col {
-        background: var(--offwhite);
-        padding: 36px 32px;
-      }
-      .contrast-col.is {
-        background: var(--obsidian);
-      }
-      .contrast-col h3 {
-        font-family: var(--sans);
-        font-size: 12px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        font-weight: 700;
-        margin-bottom: 20px;
-        color: var(--slate);
-      }
-      .contrast-col.is h3 {
-        color: var(--gold);
-      }
-      .contrast-col ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .contrast-col li {
-        font-family: var(--serif);
-        font-size: 18px;
-        padding: 10px 0;
-        color: var(--obsidian-light);
-        border-bottom: 1px solid var(--slate-light);
-      }
-      .contrast-col li:last-child {
-        border-bottom: none;
-      }
-      .contrast-col.is li {
-        color: var(--cream);
-        border-bottom: 1px solid var(--obsidian-mid);
-        font-weight: 700;
-      }
+    .pricing { background:var(--cream) }
+    .pricing-grid { display:grid; gap:28px; max-width:820px; margin:0 auto }
+    .price-card { position:relative; display:flex; flex-direction:column; padding:32px 26px; border:1px solid var(--line); border-radius:7px; background:var(--paper) }
+    .price-card.featured { border:2px solid var(--gold); padding:31px 25px }
+    .price-banner { align-self:flex-start; margin:-45px 0 24px; padding:7px 11px; border-radius:2px; background:var(--gold); font-size:.68rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase }
+    .plan-name { color:var(--gold-dark); font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase }
+    .price { margin:12px 0 18px; font:700 2.8rem/1 var(--serif) }
+    .price span { color:var(--slate); font:400 .86rem var(--sans) }
+    .price-card p { color:var(--slate); font-size:.92rem }
+    .price-card ul { margin:10px 0 26px; padding:0; list-style:none }
+    .price-card li { position:relative; padding:7px 0 7px 20px; font-size:.88rem }
+    .price-card li::before { position:absolute; left:0; color:var(--gold-dark); content:"✓"; font-weight:700 }
+    .price-card .button { margin-top:auto }
+    .pricing-note { margin:24px auto 0; color:var(--slate); font-size:.82rem; text-align:center }
 
-      /* FAST */
-      .fast {
-        background: var(--obsidian);
-        color: var(--cream);
-      }
-      .fast .section-head h2 {
-        color: var(--cream);
-      }
-      .fast .section-head p {
-        color: var(--slate-light);
-      }
-      .fast .eyebrow {
-        color: var(--gold);
-      }
-      .fast-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1px;
-        background: var(--obsidian-mid);
-        max-width: 1000px;
-        margin: 0 auto;
-        border: 1px solid var(--obsidian-mid);
-      }
-      @media (min-width: 820px) {
-        .fast-grid {
-          grid-template-columns: repeat(4, 1fr);
-        }
-      }
-      .fast-card {
-        background: var(--obsidian);
-        padding: 32px 26px;
-      }
-      .fast-letter {
-        font-family: var(--serif);
-        font-size: 34px;
-        font-weight: 700;
-        color: var(--gold);
-        line-height: 1;
-      }
-      .fast-card h3 {
-        font-family: var(--serif);
-        color: var(--cream);
-        font-size: 18px;
-        margin-top: 14px;
-      }
-      .fast-card p {
-        font-family: var(--sans);
-        color: var(--slate-light);
-        font-size: 14px;
-        margin-top: 10px;
-        line-height: 1.6;
-      }
+    .faq-section { background:var(--paper) }
+    .faq-list { max-width:800px; margin:0 auto; border-top:1px solid var(--line) }
+    details { border-bottom:1px solid var(--line) }
+    summary { position:relative; padding:22px 38px 22px 0; cursor:pointer; font:700 1.05rem var(--serif); list-style:none }
+    summary::-webkit-details-marker { display:none }
+    summary::after { position:absolute; right:4px; color:var(--gold-dark); content:"+"; font:400 1.5rem var(--sans) }
+    details[open] summary::after { content:"−" }
+    details p { max-width:700px; margin:-4px 0 24px; color:var(--slate); font-size:.92rem }
 
-      /* LIFE AREAS */
-      .areas-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 16px;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-      @media (min-width: 640px) {
-        .areas-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-      @media (min-width: 980px) {
-        .areas-grid {
-          grid-template-columns: repeat(5, 1fr);
-        }
-      }
-      .area-card {
-        background: var(--offwhite);
-        border-left: 4px solid var(--area-color);
-        border-radius: 6px;
-        padding: 22px 20px;
-      }
-      .area-card .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: var(--area-color);
-        margin-bottom: 14px;
-      }
-      .area-card h3 {
-        font-size: 15px;
-        letter-spacing: 1px;
-        color: var(--area-color);
-        text-transform: uppercase;
-        font-family: var(--sans);
-        font-weight: 700;
-      }
-      .area-card p {
-        font-family: var(--serif);
-        font-size: 15px;
-        color: var(--obsidian-light);
-        margin-top: 10px;
-        line-height: 1.5;
-      }
+    .final-cta { padding:28px 0; background:var(--cream) }
+    .final-panel { padding:56px 24px; border:2px solid var(--gold); background:var(--obsidian); color:var(--cream); text-align:center }
+    .final-panel h2 { margin-bottom:12px; color:var(--cream); font-size:clamp(2.2rem,9vw,4rem) }
+    .final-panel p { margin-bottom:26px; color:#aaa398 }
+    footer { padding:40px 0; border-top:1px solid #34312d; background:var(--obsidian); color:#8f897f }
+    .footer-inner { display:flex; flex-direction:column; gap:24px; align-items:center; text-align:center }
+    .footer-brand { color:var(--cream) }
+    .footer-links { display:flex; flex-wrap:wrap; justify-content:center; gap:16px 24px }
+    .footer-links a { font-size:.78rem; text-decoration:none }
+    .footer-links a:hover { color:var(--gold) }
+    .copyright { margin-bottom:0; font-size:.72rem }
 
-      /* LOOP */
-      .loop {
-        background: var(--offwhite);
-      }
-      .loop-row {
-        max-width: 900px;
-        margin: 0 auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-      }
-      .loop-step {
-        font-family: var(--sans);
-        font-weight: 700;
-        font-size: 13px;
-        letter-spacing: 0.5px;
-        background: var(--obsidian);
-        color: var(--cream);
-        padding: 10px 18px;
-        border-radius: 4px;
-      }
-      .loop-arrow {
-        color: var(--gold);
-        font-size: 16px;
-      }
+    @media (min-width:600px) {
+      .hero-actions { display:flex }
+      .hero-actions .button { min-width:190px }
+      .feature-grid,.pricing-grid { grid-template-columns:repeat(2,1fr) }
+      .pricing-grid { gap:22px }
+      .price-card { padding:38px 32px }
+      .price-card.featured { padding:37px 31px }
+      .final-panel { padding:72px 40px }
+    }
+    @media (min-width:760px) {
+      .section { padding:104px 0 }
+      .nav-links { display:flex; align-items:center; gap:24px }
+      .nav-links a { color:#b9b2a6; font-size:.76rem; font-weight:700; text-decoration:none }
+      .nav-links a:hover { color:var(--gold) }
+      .hero { padding:126px 0 116px }
+      .comparison-grid { grid-template-columns:repeat(3,1fr) }
+      .comparison-card + .comparison-card { border-top:0; border-left:1px solid var(--line) }
+      .fast-grid { grid-template-columns:repeat(2,1fr) }
+      .feature-grid { grid-template-columns:repeat(3,1fr) }
+      .footer-inner { flex-direction:row; justify-content:space-between; text-align:left }
+    }
+    @media (min-width:1040px) {
+      .fast-grid { grid-template-columns:repeat(4,1fr); gap:0 }
+      .fast-card + .fast-card { border-left:0 }
+      .fast-card:not(:last-child)::after { position:absolute; z-index:2; width:28px; height:28px; display:grid; place-items:center; border:1px solid #4a443a; border-radius:50%; background:var(--obsidian); color:var(--gold); content:"→"; right:-14px; top:30px }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto } .button { transition:none } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Ridiculous Results home"><img src="assets/icon.png" alt=""><span>RIDICULOUS RESULTS</span></a>
+      <div class="nav-links">
+        <a href="#system">The system</a><a href="#features">What you get</a><a href="#demo">Demo</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+      </div>
+      <a class="button button-gold" href="https://app.ridiculousresults.com">Start trial</a>
+    </nav>
+  </header>
 
-      /* PRICING */
-      .pricing-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-        max-width: 760px;
-        margin: 0 auto;
-      }
-      @media (min-width: 680px) {
-        .pricing-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-      }
-      .price-card {
-        background: var(--offwhite);
-        border: 1px solid var(--slate-light);
-        border-radius: 8px;
-        padding: 34px 30px;
-        text-align: left;
-      }
-      .price-card.featured {
-        border: 1.5px solid var(--gold);
-        background: var(--gold-light);
-        position: relative;
-      }
-      .price-tag {
-        position: absolute;
-        top: -12px;
-        right: 24px;
-        background: var(--gold);
-        color: var(--obsidian);
-        font-size: 10px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        padding: 5px 10px;
-        border-radius: 3px;
-      }
-      .price-card .eyebrow {
-        color: var(--gold-dark);
-      }
-      .price-amount {
-        font-family: var(--serif);
-        font-size: 40px;
-        font-weight: 700;
-        margin-top: 14px;
-        color: var(--obsidian);
-      }
-      .price-amount span {
-        font-family: var(--sans);
-        font-size: 14px;
-        font-weight: 400;
-        color: var(--slate);
-      }
-      .price-card p.desc {
-        margin-top: 10px;
-        color: var(--obsidian-light);
-        font-size: 14px;
-        line-height: 1.6;
-      }
-      .price-card .btn {
-        margin-top: 22px;
-        width: 100%;
-        text-align: center;
-      }
-      .pricing-foot {
-        text-align: center;
-        margin-top: 30px;
-        font-size: 13px;
-        color: var(--slate);
-      }
-
-      /* FAQ */
-      .faq {
-        max-width: 760px;
-        margin: 0 auto;
-      }
-      .faq-item {
-        border-bottom: 1px solid var(--slate-light);
-        padding: 22px 0;
-      }
-      .faq-item h3 {
-        font-family: var(--serif);
-        font-size: 17px;
-        margin-bottom: 8px;
-      }
-      .faq-item p {
-        font-size: 14.5px;
-        color: var(--obsidian-light);
-        line-height: 1.65;
-      }
-
-      /* FINAL CTA */
-      .final-cta {
-        background: var(--obsidian);
-        color: var(--cream);
-        text-align: center;
-      }
-      .final-cta h2 {
-        color: var(--cream);
-        font-size: 30px;
-        max-width: 600px;
-        margin: 0 auto;
-      }
-      .final-cta p {
-        color: var(--slate-light);
-        margin-top: 16px;
-        max-width: 520px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .final-cta .btn {
-        margin-top: 30px;
-      }
-
-      /* FOOTER */
-      footer {
-        background: var(--obsidian);
-        color: var(--slate);
-        padding: 40px 24px 30px;
-        border-top: 1px solid var(--obsidian-mid);
-      }
-      .footer-inner {
-        max-width: 1120px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        align-items: center;
-        text-align: center;
-      }
-      @media (min-width: 720px) {
-        .footer-inner {
-          flex-direction: row;
-          justify-content: space-between;
-          text-align: left;
-        }
-      }
-      .footer-links {
-        display: flex;
-        gap: 22px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      .footer-links a {
-        font-size: 12.5px;
-        color: var(--slate);
-        text-decoration: none;
-      }
-      .footer-links a:hover {
-        color: var(--gold);
-      }
-      .footer-brand {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-      .footer-brand img {
-        height: 22px;
-        width: auto;
-      }
-      .footer-brand span {
-        font-family: var(--serif);
-        color: var(--cream);
-        font-size: 14px;
-      }
-      .footer-copy {
-        font-size: 11.5px;
-        color: var(--obsidian-light);
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <nav class="wrap">
-        <div class="nav-brand">
-          <img src="assets/icon.png" alt="Ridiculous Results icon" />
-          <span>RIDICULOUS RESULTS</span>
-        </div>
-        <div class="nav-links">
-          <a href="#system">System</a>
-          <a href="#areas">Life Areas</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#faq">FAQ</a>
-        </div>
-        <a class="btn btn-outline nav-cta" href="#pricing">Start Trial</a>
-      </nav>
-    </header>
-
+  <main id="top">
     <section class="hero">
-      <div class="hero-inner">
-        <span class="eyebrow">Personal Execution Operating System</span>
-        <h1>Identity precedes outcome. <em>Outcome requires execution.</em></h1>
-        <p class="sub">
-          Ridiculous Results converts who you are into measurable results across
-          MASS, MONEY, MIND, MOB, and ME — then holds you accountable to what
-          you said you'd do. Every quarter. No exceptions.
-        </p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="#pricing">Start Your 14-Day Trial</a>
-          <a class="btn btn-outline" href="#system">See How It Works</a>
+      <div class="container hero-inner">
+        <span class="eyebrow">A complete system for personal execution</span>
+        <h1>The quarterly operating system for people who refuse to drift.</h1>
+        <p class="hero-copy">Ridiculous Results is not a habit tracker. It's a complete execution methodology that turns your Insane 12-month goals into weekly tasks you actually do. Across five life areas: health, money, mind, relationships, and self.</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="https://app.ridiculousresults.com">Start 14-day trial</a>
+          <a class="button button-outline" href="#demo">Watch 5-min demo</a>
         </div>
-        <p class="hero-note">
-          No motivational fluff. No habit-tracker gimmicks. Just the system.
-        </p>
+        <p class="hero-proof">14 days free. Your operating system starts with the truth.</p>
       </div>
     </section>
 
-    <section class="contrast">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="eyebrow">The Standard</span>
-          <h2>This is not a productivity app.</h2>
-        </div>
-        <div class="contrast-grid">
-          <div class="contrast-col">
-            <h3>It is not</h3>
-            <ul>
-              <li>A habit tracker</li>
-              <li>A motivational content app</li>
-              <li>A coaching course</li>
-              <li>An entertainment platform</li>
-            </ul>
-          </div>
-          <div class="contrast-col is">
-            <h3>It is</h3>
-            <ul>
-              <li>A closed-loop execution system</li>
-              <li>Built to track truth versus intention</li>
-              <li>Structured around a quarterly FAST cycle</li>
-              <li>Direct, precise, and accountable</li>
-            </ul>
-          </div>
+    <section class="section comparison" aria-labelledby="comparison-title">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">Not a habit tracker</span><h2 id="comparison-title">Tracking is not execution.</h2><p>Most tools record activity or store ambition. Ridiculous Results closes the gap between the two.</p></div>
+        <div class="comparison-grid">
+          <article class="comparison-card"><span class="label">Habit trackers</span><h3>Track what you did yesterday.</h3></article>
+          <article class="comparison-card"><span class="label">Goal apps</span><h3>List what you want someday.</h3></article>
+          <article class="comparison-card rr"><span class="label">Ridiculous Results</span><h3>Force the system that turns Insane targets into weekly execution.</h3></article>
         </div>
       </div>
     </section>
 
-    <section class="fast" id="system">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="eyebrow">The FAST Cycle</span>
-          <h2>Every quarter, the standard rises.</h2>
-          <p>
-            Foundation sets the baseline. Accelerate builds momentum. Soar
-            pushes past resistance. Triumph closes the loop and prepares the
-            next one. There is no finish line — only evidence.
-          </p>
-        </div>
+    <section class="section fast-section" id="system" aria-labelledby="fast-title">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">The FAST system</span><h2 id="fast-title">Four quarters. One compounding standard.</h2><p>Each quarter begins with evidence, raises the standard, and narrows your focus onto the work that matters most.</p></div>
         <div class="fast-grid">
-          <div class="fast-card">
-            <div class="fast-letter">F</div>
-            <h3>Foundation</h3>
-            <p>
-              Find out exactly where you are standing. Baseline survey,
-              identity, and the results that seem impossible.
-            </p>
-          </div>
-          <div class="fast-card">
-            <div class="fast-letter">A</div>
-            <h3>Accelerate</h3>
-            <p>
-              Build early momentum from real evidence — not guesses. Look back
-              honestly, look forward intelligently.
-            </p>
-          </div>
-          <div class="fast-card">
-            <div class="fast-letter">S</div>
-            <h3>Soar</h3>
-            <p>
-              Push deeper as momentum becomes real. Highest-leverage operations,
-              hardest moments, biggest gains.
-            </p>
-          </div>
-          <div class="fast-card">
-            <div class="fast-letter">T</div>
-            <h3>Triumph</h3>
-            <p>
-              Finish the cycle. Audit the full journey against the evidence,
-              then set the next INSANE result.
-            </p>
-          </div>
+          <article class="fast-card"><h3>Foundation</h3><p>Know yourself. Define your Insane results. Lay the operating system for everything that follows.</p></article>
+          <article class="fast-card"><h3>Accelerate</h3><p>Q2. Reload with evidence from the work you've done, then push harder with better information.</p></article>
+          <article class="fast-card"><h3>Soar</h3><p>Q3. Exponential movement. The magic quarter where disciplined execution starts to compound.</p></article>
+          <article class="fast-card"><h3>Triumph</h3><p>Q4. Laser focus. Protect the essential, close the gaps, and finish ridiculous.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="areas">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="eyebrow">Five Life Areas</span>
-          <h2>Nothing gets tracked in isolation.</h2>
-          <p>
-            Activate one or two areas to start. Every area follows the same
-            discipline: baseline, identity, INSANE / INCREDIBLE / IMAGINABLE
-            outcomes, operations, and weekly execution.
-          </p>
-        </div>
-        <div class="areas-grid">
-          <div class="area-card" style="--area-color: #8b3a2a">
-            <div class="dot"></div>
-            <h3>MASS</h3>
-            <p>
-              Food, force, and fitness. The current truth of your physical
-              condition.
-            </p>
-          </div>
-          <div class="area-card" style="--area-color: #1a5c3a">
-            <div class="dot"></div>
-            <h3>MONEY</h3>
-            <p>
-              Gains, growth, protection, and giving. Exact monthly numbers — no
-              vague goals.
-            </p>
-          </div>
-          <div class="area-card" style="--area-color: #1a1a1a">
-            <div class="dot"></div>
-            <h3>MIND</h3>
-            <p>
-              Higher, subconscious, and conscious mind. Where identity is built
-              and locked in.
-            </p>
-          </div>
-          <div class="area-card" style="--area-color: #6b2737">
-            <div class="dot"></div>
-            <h3>MOB</h3>
-            <p>
-              Partner, family, and friends. Intimacy and communication, rated
-              honestly.
-            </p>
-          </div>
-          <div class="area-card" style="--area-color: #1a3a5c">
-            <div class="dot"></div>
-            <h3>ME</h3>
-            <p>Fun, art, and downtime. Who you are outside of obligation.</p>
-          </div>
+    <section class="section features" id="features" aria-labelledby="features-title">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">What you get</span><h2 id="features-title">Everything required to turn intention into evidence.</h2></div>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-number">01</span><h3>5 Life Areas framework</h3><p>MASS, MONEY, MIND, MOB, and ME keep progress balanced across health, wealth, mindset, relationships, and self.</p></article>
+          <article class="feature-card"><span class="feature-number">02</span><h3>Three-tier outcomes</h3><p>Define Insane, Incredible, and Imaginable outcomes so ambition becomes a clear hierarchy instead of a vague wish.</p></article>
+          <article class="feature-card"><span class="feature-number">03</span><h3>Weekly reviews with scoring</h3><p>Review actual evidence, score every active area, expose patterns, and decide what changes next week.</p></article>
+          <article class="feature-card"><span class="feature-number">04</span><h3>Operations &amp; Tasks engine</h3><p>Break quarterly outcomes into operations, then translate those operations into work that fits your real capacity.</p></article>
+          <article class="feature-card"><span class="feature-number">05</span><h3>Accountability tracking</h3><p>Overdue work, dismissals, and recurring patterns stay visible. Nothing disappears without an honest decision.</p></article>
+          <article class="feature-card"><span class="feature-number">06</span><h3>Progress charts across time</h3><p>See execution and life-area scores compound over weeks and quarters—not just how busy you were today.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="loop">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="eyebrow">The Closed Loop</span>
-          <h2>
-            Truth → Avatar → Results → Operations → Tasks → Accountability →
-            Progress
-          </h2>
-          <p>
-            Every stage of every quarter runs through the same sequence. That
-            repetition is the system.
-          </p>
-        </div>
-        <div class="loop-row">
-          <span class="loop-step">Survey</span><span class="loop-arrow">→</span>
-          <span class="loop-step">Avatar</span><span class="loop-arrow">→</span>
-          <span class="loop-step">Outcomes</span
-          ><span class="loop-arrow">→</span>
-          <span class="loop-step">Operations</span
-          ><span class="loop-arrow">→</span> <span class="loop-step">Tasks</span
-          ><span class="loop-arrow">→</span>
-          <span class="loop-step">Accountability</span
-          ><span class="loop-arrow">→</span>
-          <span class="loop-step">Progress</span>
+    <section class="section demo" id="demo" aria-labelledby="demo-title">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">See the system</span><h2 id="demo-title">From Insane outcome to this week's work.</h2><p>See how the methodology connects your twelve-month direction to the evidence you create every week.</p></div>
+        <div class="demo-placeholder" role="img" aria-label="Placeholder for the Ridiculous Results five-minute walkthrough video">
+          <div><div class="play-mark" aria-hidden="true">▶</div><h3>5-minute walkthrough video</h3><p>Embed Loom here.</p></div>
         </div>
       </div>
     </section>
 
-    <section id="pricing">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="eyebrow">Pricing</span>
-          <h2>One system. Two ways to pay for it.</h2>
-          <p>
-            Every plan starts with a 14-day trial. Cancel anytime — the
-            accountability is on you either way.
-          </p>
-        </div>
+    <section class="section pricing" id="pricing" aria-labelledby="pricing-title">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">Pricing</span><h2 id="pricing-title">Choose your commitment.</h2><p>Both plans include the complete Ridiculous Results system and a 14-day free trial.</p></div>
         <div class="pricing-grid">
-          <div class="price-card">
-            <span class="eyebrow">Monthly</span>
-            <div class="price-amount">$29 <span>/ month</span></div>
-            <p class="desc">
-              Full access to every life area, the quarterly FAST cycle, and the
-              accountability engine.
-            </p>
-            <a
-              class="btn btn-dark"
-              href="https://app.ridiculousresults.com"
-              target="_blank"
-              rel="noopener"
-              >Start 14-Day Trial</a
-            >
-          </div>
-          <div class="price-card featured">
-            <span class="price-tag">Save 17%</span>
-            <span class="eyebrow">Annual</span>
-            <div class="price-amount">$290 <span>/ year</span></div>
-            <p class="desc">
-              Same full access, paid once a year. For people who already know
-              they're not quitting.
-            </p>
-            <a
-              class="btn btn-primary"
-              href="https://app.ridiculousresults.com"
-              target="_blank"
-              rel="noopener"
-              >Start 14-Day Trial</a
-            >
-          </div>
+          <article class="price-card">
+            <span class="plan-name">Monthly</span><div class="price">$19 <span>/ month</span></div><p>Full access with month-to-month flexibility.</p>
+            <ul><li>Complete FAST methodology</li><li>All five life areas</li><li>Weekly execution and reviews</li></ul>
+            <a class="button button-dark" href="https://app.ridiculousresults.com">Start trial</a>
+          </article>
+          <article class="price-card featured">
+            <span class="price-banner">Save 17% / 2 months free</span><span class="plan-name">Annual</span><div class="price">$190 <span>/ year</span></div><p>The full year of execution, paid once.</p>
+            <ul><li>Complete FAST methodology</li><li>All five life areas</li><li>Two months free</li></ul>
+            <a class="button button-gold" href="https://app.ridiculousresults.com">Start trial</a>
+          </article>
         </div>
-        <p class="pricing-foot">
-          Card required to start. You will not be charged until the trial ends.
-        </p>
+        <p class="pricing-note">14-day free trial. No credit card charge until day 15.</p>
       </div>
     </section>
 
-    <section id="faq" style="background: var(--offwhite)">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="eyebrow">FAQ</span>
-          <h2>What people ask before they start.</h2>
-        </div>
-        <div class="faq">
-          <div class="faq-item">
-            <h3>Is this a habit tracker?</h3>
-            <p>
-              No. Habit trackers reward streaks. This system tracks whether you
-              did what you said you would do, and forces you to answer for it
-              when you didn't.
-            </p>
-          </div>
-          <div class="faq-item">
-            <h3>Do I have to work on all five life areas at once?</h3>
-            <p>
-              No. Most people start with one or two. You can activate the rest
-              later — each one starts at Foundation when you do.
-            </p>
-          </div>
-          <div class="faq-item">
-            <h3>What happens if I miss a task?</h3>
-            <p>
-              You're asked what happened, and you choose one action: do it
-              today, reschedule this week, reduce scope, or remove it and
-              explain why. There is no silent skip.
-            </p>
-          </div>
-          <div class="faq-item">
-            <h3>Who built this?</h3>
-            <p>
-              Ridiculous Results is built by Shift Mastery LLC and
-              operationalizes an NLP Master Practitioner coaching methodology
-              inside a structured, quarterly execution system.
-            </p>
-          </div>
+    <section class="section faq-section" id="faq" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-heading"><span class="eyebrow">FAQ</span><h2 id="faq-title">Before you start.</h2></div>
+        <div class="faq-list">
+          <details><summary>Is this just another productivity app?</summary><p>No. It's a methodology for compounding real-world results across all five areas of life, not a to-do app.</p></details>
+          <details><summary>How long does setup take?</summary><p>Foundation takes 1–3 hours depending on how clear you are on what you want. Then you're executing.</p></details>
+          <details><summary>What if I'm already in the middle of the year?</summary><p>The system auto-extends to protect your runway. Starting in August won't shortchange you.</p></details>
+          <details><summary>Can I cancel anytime?</summary><p>Yes. Cancellation is instant via the Lemon Squeezy customer portal, and you keep access through your paid period.</p></details>
+          <details><summary>What makes this different from Notion, coaches, or planners?</summary><p>Those are tools or people. This is a complete self-contained system that enforces the discipline that produces ridiculous results.</p></details>
         </div>
       </div>
     </section>
 
-    <section class="final-cta">
-      <div class="wrap">
-        <h2>Stop tracking intention. Start tracking evidence.</h2>
-        <p>
-          Your first Foundation stage starts with one question: where are you
-          standing right now?
-        </p>
-        <a
-          class="btn btn-primary"
-          href="https://app.ridiculousresults.com"
-          target="_blank"
-          rel="noopener"
-          >Start Your 14-Day Trial</a
-        >
-      </div>
+    <section class="final-cta" aria-labelledby="final-title">
+      <div class="container final-panel"><span class="eyebrow">Your next quarter starts here</span><h2 id="final-title">Stop drifting. Start compounding.</h2><p>Turn the result you keep talking about into the work you do this week.</p><a class="button button-gold" href="https://app.ridiculousresults.com">Start 14-day trial</a></div>
     </section>
+  </main>
 
-    <footer>
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <img src="assets/icon.png" alt="Ridiculous Results icon" />
-          <span>RIDICULOUS RESULTS</span>
-        </div>
-        <div class="footer-links">
-          <a href="/terms.html">Terms</a>
-          <a href="/privacy.html">Privacy</a>
-          <a href="mailto:support@ridiculousresults.com"
-            >support@ridiculousresults.com</a
-          >
-        </div>
-      </div>
-      <div class="footer-inner" style="margin-top: 18px">
-        <p class="footer-copy">
-          © 2026 Shift Mastery LLC. All rights reserved.
-        </p>
-      </div>
-    </footer>
-  </body>
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand footer-brand" href="#top"><img src="assets/icon.png" alt=""><span>RIDICULOUS RESULTS</span></a>
+      <div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:support@ridiculousresults.com">support@ridiculousresults.com</a></div>
+      <p class="copyright">A product of Shift Mastery, LLC. © 2026.</p>
+    </div>
+  </footer>
+</body>
 </html>
